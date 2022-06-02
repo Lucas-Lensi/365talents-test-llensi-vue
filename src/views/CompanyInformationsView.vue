@@ -105,38 +105,38 @@ import { scrapeCompany } from '../services/scrapper.js'
 import loaderComponent from '../components/LoaderComponent.vue';
 
 export default {
-  name: 'CompanyInformations',
-  components: {
-    loaderComponent
-  },
-  data() {
-    return {
-      loaded: false,
-      company: {},
+	name: 'CompanyInformations',
+	components: {
+		loaderComponent
+	},
+	data() {
+		return {
+			loaded: false,
+			company: {},
 			notFound: false
-    }
-  },
-  mounted() {
-    this.getCompanyInformations();
-  },
-  methods: {
-    async getCompanyInformations() {
-      const res = await scrapeCompany(this.$route.params.companyName);
-      if (res) {
+		}
+	},
+	mounted() {
+		this.getCompanyInformations();
+	},
+	methods: {
+		async getCompanyInformations() {
+			const res = await scrapeCompany(this.$route.params.companyName);
+			if (res) {
 				if (Object.keys(res).length === 0)
 					this.notFound = true;
-        this.company = res;
-        this.loaded = true;
-      } else {
+				this.company = res;
+				this.loaded = true;
+			} else {
 					this.notFound = true;
 			}
-    }
-  }
+		}
+	}
 }
 </script>
 
 <style>
-  .align-start {
-    text-align:start !important
-  }
+	.align-start {
+		text-align:start !important
+	}
 </style>
