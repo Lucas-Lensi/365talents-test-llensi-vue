@@ -95,9 +95,9 @@
 						<pre style="white-space: pre; white-space: pre-wrap;" class="font-weight-bold">{{company.description}}</pre>
 					</v-list-item-content>
 				</v-list-item>
-      </v-list>
-    </v-card>
-  </v-container>
+			</v-list>
+		</v-card>
+	</v-container>
 </template>
 
 <script>
